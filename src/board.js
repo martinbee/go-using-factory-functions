@@ -18,16 +18,16 @@ export default function createBoard(size, gridSize) {
   board.board = function() {
     const grid = [];
 
-    for (let i = 0; i < size; i ++) {
+    for (let i = 0; i < this.size; i ++) {
       grid[i] = [];
 
-      for (let j = 0; j < size; j++) {
+      for (let j = 0; j < this.size; j++) {
         grid[i][j] = this.EMPTY;
       }
     }
 
     return grid;
-  }
+  }();
 
   // Switches the current player
   board.switchPlayer = function() {
