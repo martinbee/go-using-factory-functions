@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import Board from './board.js';
+import createBoard from './board.js';
 import AlertView from './AlertView';
 import PassView from './PassView';
 import BoardView from './BoardView';
 
-const GRID_SIZE = 40;
-const board = new Board(19);
+const size = 19;
+const gridSize = 40;
+const board = createBoard(size, gridSize);
 
 class App extends Component {
   constructor() {
@@ -27,7 +28,7 @@ class App extends Component {
       <div className="App">
         <AlertView board={board} />
         <PassView board={board} />
-        <BoardView board={board} gridSize={GRID_SIZE} onPlay={this.onBoardUpdate} />
+        <BoardView board={board} onPlay={this.onBoardUpdate} />
       </div>
     );
   }

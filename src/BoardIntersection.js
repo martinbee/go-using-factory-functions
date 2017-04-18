@@ -1,7 +1,5 @@
 import React from 'react';
 
-import Board from './board';
-
 export default function BoardIntersection({
   board,
   row,
@@ -20,9 +18,9 @@ export default function BoardIntersection({
   };
 
   const getColor = () => {
-    if (color === Board.EMPTY) return '';
+    if (color === this.EMPTY) return '';
 
-    return color === Board.BLACK ? "black" : "white";
+    return color === this.BLACK ? "black" : "white";
   };
 
   const classes = `intersection ${getColor()}`;

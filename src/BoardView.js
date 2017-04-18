@@ -2,7 +2,7 @@ import React from 'react';
 
 import BoardIntersection from './BoardIntersection';
 
-export default function BoardView({ board, gridSize, onPlay }) {
+export default function BoardView({ board, onPlay }) {
   const intersections = [];
 
   for (let i = 0; i < board.size; i++) {
@@ -12,7 +12,7 @@ export default function BoardView({ board, gridSize, onPlay }) {
         row: i,
         col: j,
         onPlay,
-        gridSize,
+        gridSize: board.gridSize,
         color: board.board[i][j],
       });
 
@@ -20,7 +20,7 @@ export default function BoardView({ board, gridSize, onPlay }) {
     }
   }
 
-  const totalBoardSize = board.size * gridSize;
+  const totalBoardSize = board.size * board.gridSize;
   const style = { width: totalBoardSize, height: totalBoardSize };
 
   return (
