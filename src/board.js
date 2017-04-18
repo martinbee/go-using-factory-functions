@@ -15,19 +15,21 @@ export default function createBoard(size, gridSize) {
   board.currentColor = board.BLACK;
 
   // Returns a size x size board with all entries set to this.Empty
-  board.board = function() {
+  board.createGrid = function() {
     const grid = [];
 
-    for (let i = 0; i < board.size; i ++) {
+    for (let i = 0; i < this.size; i ++) {
       grid[i] = [];
 
-      for (let j = 0; j < board.size; j++) {
-        grid[i][j] = board.EMPTY;
+      for (let j = 0; j < this.size; j++) {
+        grid[i][j] = this.EMPTY;
       }
     }
 
     return grid;
-  }();
+  }
+
+  board.board = board.createGrid();
 
   // Switches the current player
   board.switchPlayer = function() {
@@ -44,7 +46,7 @@ export default function createBoard(size, gridSize) {
 
   board.resetGame = function() {
     this.currentColor = this.BLACK;
-    this.board = this.createGrid(this.size);
+    this.board = this.createGrid();
     this.lastMovePassed = false;
     this.inAtari = false;
     this.attemptedSuicide = false;
