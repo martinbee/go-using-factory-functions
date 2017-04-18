@@ -2,7 +2,7 @@ import _ from 'lodash';
 
 export default function createBoard(size, gridSize) {
   return {
-    currentColor: this.black,
+    currentColor: this.BLACK,
     size,
     board: createGrid(size),
     gridSize,
