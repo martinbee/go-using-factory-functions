@@ -158,7 +158,7 @@ function createGrid(size) {
     grid[i] = [];
 
     for (let j = 0; j < size; j++) {
-      grid[i][j] = this.EMPTY;
+      grid[i][j] = createBoard.EMPTY;
     }
   }
 

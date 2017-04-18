@@ -18,9 +18,9 @@ export default function BoardIntersection({
   };
 
   const getColor = () => {
-    if (color === this.EMPTY) return '';
+    if (color === board.EMPTY) return '';
 
-    return color === this.BLACK ? "black" : "white";
+    return color === board.BLACK ? "black" : "white";
   };
 
   const classes = `intersection ${getColor()}`;
