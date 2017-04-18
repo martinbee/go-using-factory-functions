@@ -18,11 +18,11 @@ export default function createBoard(size, gridSize) {
   board.board = function() {
     const grid = [];
 
-    for (let i = 0; i < this.size; i ++) {
+    for (let i = 0; i < board.size; i ++) {
       grid[i] = [];
 
-      for (let j = 0; j < this.size; j++) {
-        grid[i][j] = this.EMPTY;
+      for (let j = 0; j < board.size; j++) {
+        grid[i][j] = board.EMPTY;
       }
     }
 
