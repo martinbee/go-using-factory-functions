@@ -11,15 +11,8 @@ const gridSize = 40;
 const board = createBoard(size, gridSize);
 
 class App extends Component {
-  constructor() {
-    super();
-    this.state = { board };
-    this.onBoardUpdate = this.onBoardUpdate.bind(this);
-  }
-
-  onBoardUpdate() {
-    this.setState({ board });
-  }
+  state = { board };
+  onBoardUpdate = () => this.setState({ board });
 
   render() {
     const { board } = this.state;
